@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eisprungrechner</title>
+    <link href="assets/css/style.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="main-wrapper">
+    <div class="container">
+        <div class="text-col">
+            <h2>Eisprungrechner</h2>
+            <div class="calc-description">
+                *Der Zyklus der Frau ist individuell und von verschiedenen Faktoren abhängig. Dieser Rechner zur Bestimmung des Datums für einen Eisprung kann daher lediglich einen Anhaltspunkt liefern.
+            </div>
+        </div>
+        <div class="calc-col">
+            <label for="lastPeriod">Erster Tag der letzen Periode</label>
+            <input type="date" id="lastPeriod" required>
+            <label for="cycleLength">Zykluslänge in Tagen:</label>
+            <input type="number" id="cycleLength" min="21" max="35" required>
+            <button onclick="calculateOvulation()">Berechnen</button>
+        </div>
+    </div>
+    <div id="result-container">
+        <h3>Ergebnis</h3>
+        <div id="result"></div>
+        <div class="calendar-wrapper">
+            <div class="calendar-actions">
+                <span id="monthYear"></span>
+                <div class="btns">
+                    <button id="prev-month" onclick="changeMonth(-1)">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+                            <path d="M13.637 5.62903L8.21789 10.9454L13.637 16.2617" stroke="black" stroke-width="1.44509" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <button id="next-month" onclick="changeMonth(1)">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 23 23" fill="none">
+                            <path d="M8.90015 16.8507L14.3192 11.5344L8.90015 6.21802" stroke="black" stroke-width="1.44509" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div id="calendar"></div>
+        </div>
+
+    </div>
+
+</div>
+
+<script src="assets/js/calc.js"></script>
+</body>
+</html>
