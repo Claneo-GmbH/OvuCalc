@@ -72,18 +72,16 @@ function showAnnotation() {
   fertileEnd.setDate(ovulationDate.getDate() + 1);
 
   document.getElementById("result").innerHTML = `
-                Nächsten Fruchtbare Tage: vom <strong>${formatDate(fertileStart)}</strong> bis 
-                <strong>${formatDate(fertileEnd)}</strong><br>
-                Eisprung: <strong>${formatDate(ovulationDate)}</strong>
+<div><div class="f-day"></div><div>Fruchtbare Tage: ${formatDate(fertileStart)} - ${formatDate(fertileEnd)}</div></div>
+<div><div class="o-day"></div><div>Voraussichtlicher Eisprung: ${formatDate(ovulationDate)}</div></div>
             `;
 }
 
 function formatDate(date) {
   let day = date.getDate().toString().padStart(2, '0');
-  let month = (date.getMonth() + 1).toString().padStart(2, '0');
-  let year = date.getFullYear();
+  let month = date.toLocaleString('de-DE', {month: 'long'});
 
-  return `${day}.${month}.${year}`;
+  return `${day}. ${month}`;
 }
 
 function generateCalendar() {
