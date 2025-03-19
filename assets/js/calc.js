@@ -10,7 +10,7 @@ function restrictDateInput(inputId) {
   let maxDate = today.toISOString().split('T')[0];
 
   let minDate = new Date();
-  minDate.setDate(today.getDate() - 35);
+  minDate.setDate(today.getDate() - 45);
   minDate = minDate.toISOString().split('T')[0];
 
   dateInput.setAttribute("max", maxDate);
@@ -30,7 +30,7 @@ function calculateOvulation() {
   let cycleLength = parseInt(document.getElementById("cycleLength").value);
   let lastPeriod = new Date(document.getElementById("lastPeriod").value);
 
-  if (!lastPeriod || isNaN(cycleLength) || cycleLength < 21 || cycleLength > 35) {
+  if (!lastPeriod || isNaN(cycleLength) || cycleLength < 21 || cycleLength > 45) {
     alert("Bitte geben Sie gültige Daten ein.");
     return;
   }
