@@ -207,3 +207,9 @@ input:focus {
         font-size: 18px;
     }
 }
+
+.disclaimer {
+    margin-top: 28px;
+    border-top: 1px solid #8E8E8E;
+    padding-top: 12px;
+}
